@@ -1,0 +1,7 @@
+<view class="chart-box" style="width: {{width}}rpx; color: {{textColor}};">
+  <canvas canvas-id="gaugeCanvas" class="gauge-canvas" style="width: {{width}}rpx; height: {{height}}rpx;"></canvas>
+  <view class="chart-desc" style="bottom: {{descBottom}}rpx;">
+    <view class="chart-desc__subtitle" style="font-size: {{subtitleFontSize}}rpx;">{{subtitle}}</view>
+    <view class="chart-desc__title" style="font-size: {{titleFontSize}}rpx; margin-top: {{titleMarginTop}}rpx;">{{title}}</view>
+  </view>
+</view>

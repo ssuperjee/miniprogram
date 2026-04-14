@@ -1,0 +1,20 @@
+<view class="privacy-mask {{show?'show':'hide'}}">
+    <view class="privacy-dialog">
+        <view class="dialog-title">用户隐私保护提示</view>
+        <view class="dialog-content">
+            感谢您使用本小程序。
+      在使用前，请您务必审慎阅读并同意
+            <text class="link" bindtap="openPrivacyContract">《小程序用户隐私保护指引》</text>
+            。
+      当您点击“同意”，即表示您已阅读、理解并同意全部条款，
+      我们将按协议收集、使用您的相关信息。
+      如您不同意，将无法使用需要授权的功能。
+        </view>
+        <view class="dialog-buttons">
+            <button class="btn btn-cancel" bindtap="handleDisagree">暂不使用</button>
+            <button class="btn btn-confirm" open-type="agreePrivacyAuthorization" bindagreeprivacyauthorization="handleAgree">
+                同意并继续
+            </button>
+        </view>
+    </view>
+</view>

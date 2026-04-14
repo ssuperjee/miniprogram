@@ -1,0 +1,274 @@
+/*!
+ * 微信小程序 normalize.wxss
+ * 适配基础库 3.0+ / 2026最新
+ * 作用：统一跨系统默认样式、重置边距、规范盒模型、修复渲染差异
+ */
+
+/* ==============================
+   1. 全局盒模型与基础重置
+   ============================== */
+   page,
+   view,
+   text,
+   button,
+   input,
+   textarea,
+   navigator,
+   image,
+   scroll-view,
+   swiper,
+   swiper-item,
+   picker,
+   radio,
+   checkbox,
+   switch,
+   slider,
+   progress,
+   canvas,
+   label,
+   form,
+   icon {
+     box-sizing: border-box;
+     position: relative;
+     margin: 0;
+     padding: 0;
+     border: 0;
+     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+     -webkit-tap-highlight-color: transparent;
+     -webkit-user-select: none;
+             user-select: none;
+     background: transparent;
+     appearance: none;
+   }
+   
+   /* 允许文本区域可选中 */
+   text,
+   input,
+   textarea {
+     -webkit-user-select: text;
+             user-select: text;
+   }
+   
+   /* ==============================
+      2. 页面根容器 page
+      ============================== */
+   page {
+     min-height: 100vh;
+     background-color: #fff;
+     color: #333;
+     font-size: 28rpx;
+     line-height: 1.4;
+     overflow-x: hidden;
+   }
+   
+   /* ==============================
+      3. 文本与排版
+      ============================== */
+   text {
+     display: inline;
+     line-height: inherit;
+     white-space: pre-wrap;
+     word-wrap: break-word;
+   }
+   
+   /* 修复嵌套 text 行高异常 */
+   text text {
+     display: inline;
+     line-height: inherit;
+   }
+   
+   /* 标题统一基线 */
+   h1, .h1 { font-size: 48rpx; font-weight: 700; }
+   h2, .h2 { font-size: 42rpx; font-weight: 700; }
+   h3, .h3 { font-size: 36rpx; font-weight: 600; }
+   h4, .h4 { font-size: 32rpx; font-weight: 600; }
+   h5, .h5 { font-size: 28rpx; font-weight: 500; }
+   h6, .h6 { font-size: 24rpx; font-weight: 500; }
+   
+   /* ==============================
+      4. 按钮 button
+      ============================== */
+   button {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 8rpx;
+     font-size: 28rpx;
+     font-weight: 500;
+     line-height: 1;
+     white-space: nowrap;
+     outline: none;
+     overflow: hidden;
+   }
+   
+   /* 修复按钮默认边框与背景 */
+   button::after {
+     border: none;
+   }
+   
+   /* 去除点击态边框 */
+   button[plain]::after {
+     border: 0;
+   }
+   
+   /* ==============================
+      5. 输入框 input / textarea
+      ============================== */
+   input,
+   textarea {
+     display: block;
+     width: 100%;
+     font-size: 28rpx;
+     color: #333;
+     background: #fff;
+     border-radius: 0;
+     outline: none;
+   }
+   
+   /* 修复 placeholder 颜色 */
+   input::placeholder,
+   textarea::placeholder {
+     color: #999;
+     opacity: 1;
+   }
+   
+   /* 修复 iOS 输入框内阴影 */
+   input {
+     -webkit-appearance: none;
+   }
+   
+   textarea {
+     min-height: 160rpx;
+     resize: none;
+     line-height: 1.5;
+   }
+   
+   /* ==============================
+      6. 图片 image
+      ============================== */
+   image {
+     display: block;
+     width: 100%;
+     border-style: none;
+     object-fit: cover;
+   }
+   
+   /* ==============================
+      7. 导航 navigator
+      ============================== */
+   navigator {
+     text-decoration: none;
+     color: inherit;
+     display: block;
+   }
+   
+   /* 修复 navigator 嵌套 text 下划线 */
+   navigator text {
+     text-decoration: none;
+   }
+   
+   /* ==============================
+      8. 表单组件统一
+      ============================== */
+   radio,
+   checkbox,
+   switch {
+     display: flex;
+     align-items: center;
+   }
+   
+   /* 修复滑块默认样式 */
+   slider {
+     width: 100%;
+     height: 6rpx;
+     border-radius: 3rpx;
+     background-color: #e5e5e5;
+   }
+   
+   /* 修复进度条 */
+   progress {
+     width: 100%;
+     height: 6rpx;
+     border-radius: 3rpx;
+   }
+   
+   /* ==============================
+      9. 滚动与轮播
+      ============================== */
+   scroll-view {
+     display: block;
+     overflow: hidden;
+   }
+   
+   swiper {
+     position: relative;
+     overflow: hidden;
+   }
+   
+   swiper-item {
+     display: block;
+     height: 100%;
+   }
+   
+   /* ==============================
+      10. 修复系统差异
+      ============================== */
+   
+   /* 修复 iOS 按钮圆角、点击放大 */
+   button {
+     border-radius: 8rpx;
+     transform: scale(1);
+   }
+   
+   /* 修复 iOS 滚动回弹空白背景 */
+   scroll-view,
+   page {
+     background-color: #fff;
+   }
+   
+   /* 修复 Android 输入框光标偏上 */
+   input,
+   textarea {
+     line-height: 1.2;
+   }
+   
+   /* 修复小程序组件伪元素默认边距 */
+   view::before,
+   view::after,
+   text::before,
+   text::after,
+   button::before,
+   button::after {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+   
+   /* ==============================
+      11. 工具类（可选）
+      ============================== */
+   /* 清除浮动 */
+   .clearfix::after {
+     content: "";
+     display: table;
+     clear: both;
+   }
+   
+   /* 文本溢出省略 */
+   .ellipsis {
+     overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+   }
+   
+   .ellipsis-2 {
+     display: -webkit-box;
+     -webkit-line-clamp: 2;
+     -webkit-box-orient: vertical;
+     overflow: hidden;
+   }
+   
+   /* 布局 */
+   .flex { display: flex; }
+   .flex-center { display: flex; align-items: center; justify-content: center; }
+   .flex-between { display: flex; align-items: center; justify-content: space-between; }

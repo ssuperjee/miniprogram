@@ -1,0 +1,8 @@
+// ========== 字体大小工具类 ==========
+@for $i from 12 through 48 {
+  @if $i % 2 == 0 {
+    .font#{$i} {
+      font-size: #{$i}rpx;
+    }
+  }
+}

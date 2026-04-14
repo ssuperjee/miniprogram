@@ -1,0 +1,4 @@
+<view>
+  <navigation-bar title="首页" back="{{true}}" mode="stacked" color="black" background="transparent"></navigation-bar>
+
+</view>

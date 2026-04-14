@@ -1,0 +1,13 @@
+<view class="bg-box bg-box--{{mode}} {{extClass}}" style="{{mode === 'global' ? '' : 'width: ' + width + 'rpx; height: ' + height + 'rpx;'}};background-color:{{bgColor}}">
+  <image class="bg-box__image" src="{{src}}" mode="{{imgMode}}"></image>
+  <view class="bg-box__content">
+    <slot></slot>
+  </view>
+</view>
+
+<!-- 示例 -->
+<!-- <bg-box width="500" height="300" src="/assets/img/1.png">
+  <view>
+    <view class="">测试一下213</view>
+  </view>
+</bg-box> -->
