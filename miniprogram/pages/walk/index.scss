@@ -1,0 +1,197 @@
+.page {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #eef3f8;
+}
+
+.map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-bar {
+  position: absolute;
+  top: 88rpx;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28rpx;
+}
+
+.nav-back {
+  width: 72rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 64rpx;
+  color: #111111;
+}
+
+.nav-title {
+  flex: 1;
+  text-align: center;
+  font-size: 38rpx;
+  font-weight: 700;
+  color: #111111;
+}
+
+.nav-capsule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150rpx;
+  height: 64rpx;
+  border-radius: 999rpx;
+  background: rgba(150, 150, 150, 0.35);
+  color: #ffffff;
+  font-size: 28rpx;
+}
+
+.nav-capsule-dots {
+  margin-right: 12rpx;
+}
+
+.mode-switch {
+  position: absolute;
+  top: 172rpx;
+  left: 50%;
+  z-index: 31;
+  display: flex;
+  align-items: center;
+  padding: 8rpx;
+  border-radius: 999rpx;
+  transform: translateX(-50%);
+  width: 700rpx;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 12rpx 28rpx rgba(36, 59, 91, 0.12);
+}
+
+.mode-chip {
+  flex: 1;
+  height: 56rpx;
+  padding: 0 10rpx;
+  border-radius: 999rpx;
+  text-align: center;
+  line-height: 56rpx;
+  font-size: 22rpx;
+  color: #6a778b;
+}
+
+.mode-chip-active {
+  background: #111111;
+  color: #ffffff;
+}
+
+.summary-card {
+  position: absolute;
+  top: 214rpx;
+  left: 24rpx;
+  right: 24rpx;
+  z-index: 31;
+  padding: 26rpx 24rpx;
+  border-radius: 28rpx;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 18rpx 34rpx rgba(34, 57, 86, 0.12);
+}
+
+.summary-status {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #111111;
+}
+
+.summary-hint {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #6b778c;
+}
+
+.metrics-row {
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.metric-item {
+  flex: 1;
+  padding: 18rpx;
+  border-radius: 22rpx;
+  background: #f3f7f9;
+}
+
+.metric-item + .metric-item {
+  margin-left: 16rpx;
+}
+
+.metric-label {
+  font-size: 22rpx;
+  color: #758296;
+}
+
+.metric-value {
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #102132;
+  word-break: break-all;
+}
+
+.side-actions {
+  position: absolute;
+  right: 22rpx;
+  bottom: 278rpx;
+  z-index: 30;
+}
+
+.fab {
+  width: 78rpx;
+  height: 78rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: #16a34a;
+  text-align: center;
+  line-height: 78rpx;
+  font-size: 40rpx;
+  box-shadow: 0 10rpx 24rpx rgba(34, 57, 86, 0.16);
+}
+
+.bottom-sheet {
+  position: absolute;
+  left: 20rpx;
+  right: 20rpx;
+  bottom: 48rpx;
+  z-index: 31;
+}
+
+.primary-btn,
+.ghost-btn {
+  height: 92rpx;
+  border-radius: 24rpx;
+  text-align: center;
+  line-height: 92rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.primary-btn {
+  color: #ffffff;
+  box-shadow: 0 16rpx 32rpx rgba(26, 75, 141, 0.16);
+}
+
+.primary-btn.success {
+  background: #16a34a;
+}
+
+.primary-btn.danger {
+  background: #ef233c;
+}
+
+.ghost-btn {
+  margin-top: 18rpx;
+  background: rgba(255, 255, 255, 0.95);
+  color: #22374f;
+}

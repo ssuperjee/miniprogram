@@ -1,3 +1,23 @@
+type PrivacyDialogPrivacySettingResult = {
+  needAuthorization?: boolean;
+};
+
+type PrivacyDialogWxWithPrivacyApi = typeof wx & {
+  getPrivacySetting?: (options: {
+    success?: (result: PrivacyDialogPrivacySettingResult) => void;
+    fail?: (error: unknown) => void;
+  }) => void;
+  openPrivacyContract?: (options: {
+    success?: (result: unknown) => void;
+    fail?: (error: unknown) => void;
+  }) => void;
+  exitMiniProgram?: (options?: {
+    success?: (result: unknown) => void;
+    fail?: (error: unknown) => void;
+    complete?: (result: unknown) => void;
+  }) => void;
+};
+
 Component({
   properties: {
     show: {
@@ -17,9 +37,16 @@ Component({
   methods: {
     // 检查是否需要弹出隐私框
     checkNeedAuthorization() {
-      wx.getPrivacySetting({
-        success: (res) => {
+      const privacyApi = wx as PrivacyDialogWxWithPrivacyApi;
+      if (!privacyApi.getPrivacySetting) {
+        this.setData({ show: false });
+        return;
+      }
+
+      privacyApi.getPrivacySetting({
+        success: (res: any) => {
           // 不需要授权 → 直接关闭弹框，不显示
+          console.log(res, 'needAuth >>>')
           if (!res.needAuthorization) {
             this.setData({ show: false });
           }
@@ -38,7 +65,13 @@ Component({
 
     // 打开隐私协议
     openPrivacyContract() {
-      wx.openPrivacyContract({
+      const privacyApi = wx as PrivacyDialogWxWithPrivacyApi;
+      if (!privacyApi.openPrivacyContract) {
+        wx.showToast({ title: "无法打开隐私协议", icon: "none" });
+        return;
+      }
+
+      privacyApi.openPrivacyContract({
         fail: () => {
           wx.showToast({ title: "无法打开隐私协议", icon: "none" });
         },
@@ -61,8 +94,11 @@ Component({
         confirmText: "退出",
         showCancel: false,
         success: () => {
+          const privacyApi = wx as PrivacyDialogWxWithPrivacyApi;
           this.setData({ show: false });
-          wx.exitMiniProgram();
+          if (privacyApi.exitMiniProgram) {
+            privacyApi.exitMiniProgram();
+          }
         },
       });
     },

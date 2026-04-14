@@ -15,13 +15,13 @@
     "coverView": false,
     "postcss": false,
     "minified": false,
-    "enhance": false,
+    "enhance": true,
     "showShadowRootInWxmlPanel": false,
     "packNpmRelationList": [],
     "ignoreUploadUnusedFiles": true,
     "compileHotReLoad": false,
     "skylineRenderEnable": true,
-    "es6": false,
+    "es6": true,
     "compileWorklet": false,
     "uglifyFileName": false,
     "uploadWithSourceMap": true,
@@ -47,5 +47,5 @@
     "ignore": [],
     "include": []
   },
-  "appid": "wxe3bf7bce92c9c94f"
+  "appid": "wx4548af679627e49e"
 }

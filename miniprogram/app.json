@@ -3,7 +3,8 @@
     "pages/home/index",
     "pages/list/index",
     "pages/me/index",
-    "pages/login/index"
+    "pages/login/index",
+    "pages/walk/index"
   ],
   "tabBar": {
     "color": "#cdcdcd",
@@ -45,6 +46,19 @@
       "sdkVersionEnd": "15.255.255"
     }
   },
+    "permission": {
+    "scope.userLocation": {
+      "desc": "用于行走测记录轨迹，以及水印相机写入拍摄位置"
+    },
+    "scope.userLocationBackground": {
+      "desc": "用于行走测记录轨迹，以及水印相机写入拍摄位置"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "onLocationChange",
+    "startLocationUpdate"
+  ],
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"

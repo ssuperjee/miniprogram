@@ -1,0 +1,46 @@
+<privacy-dialog show="{{showPrivacyDialog}}" bindcomplete="handlePrivacyAuthorizeComplete" />
+<view class="page">
+  <navigation-bar title="行走测" back="{{true}}" mode="stacked" color="black" background="rgba(255, 255, 255, 0.25)"></navigation-bar>
+
+  <!-- 地图组件 -->
+  <map id="walkMap" class="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" markers="{{markers}}" polyline="{{polylines}}" show-location enable-zoom enable-scroll />
+  
+  <!-- 行走测统计面板 -->
+  <cover-view class="summary-card">
+    <cover-view class="summary-status">{{statusText}}</cover-view>
+    <cover-view class="summary-hint">{{hintText}}</cover-view>
+    <cover-view class="metrics-row">
+      <cover-view class="metric-item">
+        <cover-view class="metric-label">累计距离</cover-view>
+        <cover-view class="metric-value">{{distanceText}}</cover-view>
+      </cover-view>
+      <cover-view class="metric-item">
+        <cover-view class="metric-label">累计时长</cover-view>
+        <cover-view class="metric-value">{{durationText}}</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="metrics-row">
+      <cover-view class="metric-item">
+        <cover-view class="metric-label">平均速度</cover-view>
+        <cover-view class="metric-value">{{averageSpeedText}}</cover-view>
+      </cover-view>
+      <cover-view class="metric-item">
+        <cover-view class="metric-label">轨迹点数</cover-view>
+        <cover-view class="metric-value">{{pointCount}}</cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+  <cover-view class="side-actions">
+    <cover-view class="fab" bindtap="moveToCurrentLocation">◎</cover-view>
+  </cover-view>
+
+  <!-- 底部主操作区 -->
+  <cover-view class="bottom-sheet">
+    <cover-view class="primary-btn {{isWalking ? 'danger' : 'success'}}" bindtap="handlePrimaryAction">
+      {{primaryText}}
+    </cover-view>
+    <cover-view wx:if="{{!isWalking && pointCount > 0}}" class="ghost-btn" bindtap="resetWalk">
+      清空记录
+    </cover-view>
+  </cover-view>
+</view>

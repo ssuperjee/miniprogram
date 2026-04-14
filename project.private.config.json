@@ -1,5 +1,5 @@
 {
-  "libVersion": "2.32.3",
+  "libVersion": "3.15.1",
   "projectname": "miniprogram-base",
   "setting": {
     "urlCheck": false,
@@ -18,5 +18,17 @@
     "checkInvalidKey": true,
     "ignoreDevUnusedFiles": true
   },
-  "condition": {}
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/walk/index",
+          "pathName": "pages/walk/index",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        }
+      ]
+    }
+  }
 }
