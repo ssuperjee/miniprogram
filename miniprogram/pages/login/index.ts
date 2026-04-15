@@ -1,3 +1,4 @@
+
 // pages/login/index.ts
 Page({
 
@@ -12,7 +13,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+    const params = wx.utils.route.getCurrentPageParams()?.id;
+    console.log("login 页 getCurrentPageParams 获取到的参数：", params);
   },
 
   /**

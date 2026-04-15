@@ -1,6 +1,6 @@
 <view>
   <navigation-bar title="首页" back="{{true}}" mode="stacked" color="black" background="transparent"></navigation-bar>
   <view class="home-entry">
-    <button class="subpackage-button" bindtap="goToSubpackageTest">打开分包测试页</button>
+    <button class="subpackage-button pt30 pb30" bindtap="goToSubpackageTest">打开分包测试页</button>
   </view>
 </view>

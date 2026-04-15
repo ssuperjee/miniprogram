@@ -1,4 +1,4 @@
-export const CommonUtils = {
+export const commonUtils = {
   /**
    * 计算导航栏高度 （状态栏 + 导航栏）
    */
@@ -15,4 +15,4 @@ export const CommonUtils = {
   }
 }
 
-export type CommonUtilsType = typeof CommonUtils;
+export type CommonUtilsType = typeof commonUtils;

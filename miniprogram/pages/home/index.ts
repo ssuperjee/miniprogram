@@ -5,9 +5,7 @@ Page({
   },
 
   goToSubpackageTest() {
-    wx.navigateTo({
-      url: '/subpackages/walk/index'
-    })
+    wx.utils.route.navigateTo("login", {id: 123});
   }
 
 });
