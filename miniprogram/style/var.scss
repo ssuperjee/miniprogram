@@ -6,3 +6,53 @@
     }
   }
 }
+
+// margin 工具类
+@for $i from 2 through 64 {
+  @if $i % 2 == 0 {
+    .m#{$i} {
+      margin: #{$i}rpx;
+    }
+    .mt#{$i} {
+      margin-top: #{$i}rpx;
+    }
+    .mb#{$i} {
+      margin-bottom: #{$i}rpx;
+    }
+    .ml#{$i} {
+      margin-left: #{$i}rpx;
+    }
+    .mr#{$i} {
+      margin-right: #{$i}rpx;
+    }
+  }
+}
+
+// padding 工具类
+@for $i from 2 through 64 {
+  @if $i % 2 == 0 {
+    .p#{$i} {
+      padding: #{$i}rpx;
+    }
+    .pt#{$i} {
+      padding-top: #{$i}rpx;
+    }
+    .pb#{$i} {
+      padding-bottom: #{$i}rpx;
+    }
+    .pl#{$i} {
+      padding-left: #{$i}rpx;
+    }
+    .pr#{$i} {
+      padding-right: #{$i}rpx;
+    }
+  }
+}
+
+
+//基础颜色样式
+$primary-color: #ff2132;
+$secondary-color: #f5f9ff;
+$font-color-primary: #1f2937;
+$font-color-secondary: #4b5563;
+$font-color-tertiary: #6b7280;
