@@ -4,4 +4,10 @@ Page({
     
   },
 
+  goToSubpackageTest() {
+    wx.navigateTo({
+      url: '/subpackages/walk/index'
+    })
+  }
+
 });

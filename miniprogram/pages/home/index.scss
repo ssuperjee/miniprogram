@@ -1,4 +1,13 @@
-/**index.scss**/
+.home-entry {
+  padding: 180rpx 32rpx 32rpx;
+}
+
+.subpackage-button {
+  background: #1296db;
+  color: #ffffff;
+  border-radius: 20rpx;
+  font-size: 30rpx;
+}/**index.scss**/
 page {
   height: 100vh;
   display: flex;

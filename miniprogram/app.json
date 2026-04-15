@@ -3,8 +3,15 @@
     "pages/home/index",
     "pages/list/index",
     "pages/me/index",
-    "pages/login/index",
-    "pages/walk/index"
+    "pages/login/index"
+  ],
+  "subpackages": [
+    {
+      "root": "subpackages",
+      "pages": [
+        "walk/index"
+      ]
+    }
   ],
   "tabBar": {
     "color": "#cdcdcd",
