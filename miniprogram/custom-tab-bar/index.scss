@@ -1,0 +1,50 @@
+/* 底部导航栏容器 */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 196rpx;
+  background: #f0f0f0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  border-radius: 48rpx 48rpx 0 0;
+  /* 安全区适配，iPhone等机型底部留白 */
+  padding-top: 40rpx;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 8rpx);
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 999;
+}
+
+/* 普通Tab项（左右4个） */
+.tab-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  padding-top: 8rpx;
+  box-sizing: border-box;
+}
+
+/* Tab图标 */
+.tab-icon {
+  width: 44rpx;
+  height: 44rpx;
+  margin-bottom: 6rpx;
+}
+
+/* Tab文字 */
+.tab-text {
+  font-size: 23rpx;
+  color: #999;
+  line-height: 1;
+}
+
+/* 选中态样式（红色，和你截图一致） */
+.tab-item.active .tab-text {
+  color: #1296db;
+}

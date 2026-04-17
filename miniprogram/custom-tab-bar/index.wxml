@@ -1,0 +1,17 @@
+<view class="tab-bar">
+  
+  <view class="tab-item {{current === 0 ? 'active' : ''}}" bindtap="switchTab" data-path="/pages/home/index" data-index="0">
+    <image class="tab-icon" src="{{current === 0 ? '/assets/image/tab-bar/1.png' : '/assets/image/tab-bar/2.png'}}"></image>
+    <text class="tab-text">首页</text>
+  </view>
+  
+  <view class="tab-item {{current === 1 ? 'active' : ''}}" bindtap="switchTab" data-path="/pages/list/index" data-index="1">
+    <image class="tab-icon" src="{{current === 1 ? '/assets/image/tab-bar/3.png' : '/assets/image/tab-bar/4.png'}}"></image>
+    <text class="tab-text">列表</text>
+  </view>
+
+  <view class="tab-item {{current === 2 ? 'active' : ''}}" bindtap="switchTab" data-path="/pages/me/index" data-index="2">
+    <image class="tab-icon" src="{{current === 2 ? '/assets/image/tab-bar/5.png' : '/assets/image/tab-bar/6.png'}}"></image>
+    <text class="tab-text">我的</text>
+  </view>
+</view>

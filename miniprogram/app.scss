@@ -11,3 +11,16 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+/* 消除页面切换闪烁 */
+page {
+  background-color: #fff !important;
+  -webkit-overflow-scrolling: touch;
+  transform: translate3d(0, 0, 0);
+}
+
+/* tabBar 硬件加速 */
+.tab-bar {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}

@@ -14,6 +14,7 @@
     }
   ],
   "tabBar": {
+    "custom": true,
     "color": "#cdcdcd",
     "selectedColor": "#1296db",
     "borderStyle": "black",
@@ -21,21 +22,15 @@
     "list": [
       {
         "pagePath": "pages/home/index",
-        "text": "首页",
-        "iconPath": "assets/image/tab-bar/2.png",
-        "selectedIconPath": "assets/image/tab-bar/1.png"
+        "text": "首页"
       },
       {
         "pagePath": "pages/list/index",
-        "text": "列表",
-        "iconPath": "assets/image/tab-bar/4.png",
-        "selectedIconPath": "assets/image/tab-bar/3.png"
+        "text": "列表"
       },
       {
         "pagePath": "pages/me/index",
-        "text": "我的",
-        "iconPath": "assets/image/tab-bar/6.png",
-        "selectedIconPath": "assets/image/tab-bar/5.png"
+        "text": "我的"
       }
     ]
   },
