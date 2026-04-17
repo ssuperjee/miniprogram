@@ -1,21 +1,8 @@
 <view class="home">
-  <navigation-bar title="线索提报工具" back="{{false}}" mode="overlay" color="black" background="transparent"></navigation-bar>
-  <bg-box src="/assets/image/manager/3.png" width="750" height="654">
-    <view class="home__profile-name font48 color333">{{profileName}}</view>
-    <view class="home__profile-tags">
-      <block wx:for="{{profileTags}}" wx:key="index">
-        <view class="home__profile-tag">
-          <image class="home__profile-tag-icon" src="{{item.icon}}" mode="widthFix" />
-          <view class="font22">{{item.text}}</view>
-        </view>
-      </block>
-    </view>
-
-    <view class="home__alert">
-      <view class="home__alert-dot"></view>
-      <view class="home__alert-text font24">{{alertText}}</view>
-    </view>
-  </bg-box>
+  <home-header
+    alertText="{{alertText}}"
+    alertTextColor="#ac0003"
+  ></home-header>
 
   <view class="home__content">
     <view class="home-section-title">

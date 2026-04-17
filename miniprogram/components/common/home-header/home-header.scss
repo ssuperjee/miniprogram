@@ -1,0 +1,84 @@
+.home-header__profile-name {
+  position: absolute;
+  top: 264rpx;
+  left: 40rpx;
+  width: 288rpx;
+  height: 58rpx;
+}
+
+.home-header__profile-tags {
+  position: absolute;
+  top: 342rpx;
+  left: 40rpx;
+  display: flex;
+
+  .home-header__profile-tag {
+    display: flex;
+    width: 146rpx;
+    height: 40rpx;
+    color: #1158a6;
+    align-items: center;
+
+    .home-header__profile-tag-icon {
+      width: 40rpx;
+      height: 40rpx;
+      margin-left: 6rpx;
+    }
+  }
+}
+
+.home-header__alert {
+  position: absolute;
+  top: 446rpx;
+  left: 40rpx;
+  width: 670rpx;
+  height: 74rpx;
+  display: flex;
+  align-items: center;
+  border: 2rpx solid #fff;
+  border-bottom: none;
+  border-radius: 40rpx 40rpx 0 0;
+  padding: 0 32rpx;
+  backdrop-filter: blur(10rpx);
+
+  .home-header__alert-dot {
+    width: 12rpx;
+    height: 12rpx;
+    border-radius: 100%;
+    margin-right: 20rpx;
+  }
+
+  .home-header__alert-text {
+    color: #ac0003;
+  }
+
+  &--red {
+    .home-header__alert-dot {
+      background: #ac0003;
+    }
+
+    .home-header__alert-text {
+      color: #ac0003;
+    }
+  }
+
+  &--green {
+    .home-header__alert-dot {
+      background: #007f22;
+    }
+
+    .home-header__alert-text {
+      color: #007f22;
+    }
+  }
+
+  &--blue {
+    .home-header__alert-dot {
+      background: #1447e6;
+    }
+
+    .home-header__alert-text {
+      color: #1447e6;
+    }
+  }
+}

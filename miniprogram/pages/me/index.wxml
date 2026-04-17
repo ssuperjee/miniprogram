@@ -1,2 +1,26 @@
 <!--pages/me/index.wxml-->
-<text>pages/me/index.wxml</text>
+<view class="me">
+  <home-header alertText="{{alertText}}" alertTextColor="#007F22"></home-header>
+
+  <view class="me-card">
+    <block wx:for="{{menuSections}}" wx:key="index">
+      <view class="me-card__menu">
+        <block wx:for="{{item.items}}" wx:key="title">
+          <view class="me-card__item">
+            <image class="me-card__icon" src="{{item.icon}}" mode="aspectFit" />
+            <view class="me-card__meta">
+              <view wx:if="{{item.label}}" class="me-card__label font24">{{item.label}}</view>
+              <view class="me-card__value font28">{{item.title}}</view>
+            </view>
+            <view class="me-card__arrow"  wx:if="{{!item.label}}">></view>
+          </view>
+        </block>
+      </view>
+    </block>
+
+    <view class="me-card__logout font32">
+      <image class="me-card__logout-icon" src="/assets/image/manager/2.png" mode="aspectFit" />
+      <view>退出登录</view>
+    </view>
+  </view>
+</view>

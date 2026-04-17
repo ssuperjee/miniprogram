@@ -1,1 +1,86 @@
-/* pages/me/index.wxss */
+.me-card {
+  width: 750rpx;
+  height: 1282rpx;
+  background: #f0f3fa;
+  padding: 40rpx;
+  border-radius: 40rpx;
+  margin-top: -134rpx;
+  // border-left: 2rpx solid;
+  // border-top: 2rpx solid;
+  border: 2rpx solid #fff;
+  box-shadow: inset 2rpx 2rpx 0 0 #fff;
+  position: relative;
+  z-index: 3;
+
+  &__menu {
+    border-radius: 40rpx;
+    background: #ecf0f8;
+    box-shadow: inset 2rpx 2rpx 0 0 #fff;
+
+    & + & {
+      margin-top: 20rpx;
+    }
+
+    .me-card__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 670rpx;
+      height: 146rpx;
+      padding: 32rpx;
+      border-radius: 40rpx 40rpx 0 0;
+      border-bottom: 2rpx solid #F3F4F6;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .me-card__icon {
+        width: 80rpx;
+        height: 80rpx;
+        margin-right: 20rpx;
+      }
+
+      .me-card__meta {
+        flex: 1;
+        color: #6a7282;
+      }
+
+      .me-card__value {
+        color: #101828;
+      }
+
+      .me-card__arrow {
+        // color: #98a2b3;
+        // font-size: 40rpx;
+        // line-height: 1;
+        // font-weight: 300;
+        width: 10rpx;
+        height: 20rpx;
+      }
+    }
+  }
+
+  &__label {
+    color: #6a7282;
+  }
+
+  &__logout {
+    width: 670rpx;
+    height: 116rpx;
+    margin: 20rpx auto;
+    background: linear-gradient(24deg, #e7ecf6 0%, #fbfcfe 100%);
+    box-shadow: inset 2rpx 2rpx 0rpx 0rpx #ffffff;
+    border-radius: 24rpx;
+    color: #fb2c36;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__logout-icon {
+    width: 38rpx;
+    height: 40rpx;
+    margin-right: 16rpx;
+  }
+}

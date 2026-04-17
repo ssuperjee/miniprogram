@@ -1,0 +1,17 @@
+<navigation-bar title="{{navTitle}}" back="{{false}}" mode="overlay" color="black" background="transparent"></navigation-bar>
+<bg-box src="{{bgSrc}}" width="{{bgWidth}}" height="{{bgHeight}}">
+  <view class="home-header__profile-name font48 color333">{{profileName}}</view>
+  <view class="home-header__profile-tags">
+    <block wx:for="{{profileTags}}" wx:key="index">
+      <view class="home-header__profile-tag">
+        <image class="home-header__profile-tag-icon" src="{{item.icon}}" mode="widthFix" />
+        <view class="font22">{{item.text}}</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="home-header__alert {{alertThemeClass}}">
+    <view class="home-header__alert-dot"></view>
+    <view class="home-header__alert-text font24">{{alertText}}</view>
+  </view>
+</bg-box>

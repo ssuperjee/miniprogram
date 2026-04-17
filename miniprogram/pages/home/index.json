@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "navigation-bar": "/components/navigation-bar/navigation-bar",
-    "bg-box": "/components/common/bg-box/bg-box"
+    "home-header": "/components/common/home-header/home-header"
   }
 }
