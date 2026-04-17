@@ -1,6 +1,68 @@
-<view>
-  <navigation-bar title="首页" back="{{true}}" mode="stacked" color="black" background="transparent"></navigation-bar>
-  <view class="home-entry">
-    <button class="subpackage-button pt30 pb30" bindtap="goToSubpackageTest">打开分包测试页</button>
+<view class="home">
+  <navigation-bar title="线索提报工具" back="{{false}}" mode="overlay" color="black" background="transparent"></navigation-bar>
+  <bg-box src="/assets/image/manager/3.png" width="750" height="654">
+    <view class="home__profile-name font48 color333">{{profileName}}</view>
+    <view class="home__profile-tags">
+      <block wx:for="{{profileTags}}" wx:key="index">
+        <view class="home__profile-tag">
+          <image class="home__profile-tag-icon" src="{{item.icon}}" mode="widthFix" />
+          <view class="font22">{{item.text}}</view>
+        </view>
+      </block>
+    </view>
+
+    <view class="home__alert">
+      <view class="home__alert-dot"></view>
+      <view class="home__alert-text font24">{{alertText}}</view>
+    </view>
+  </bg-box>
+
+  <view class="home__content">
+    <view class="home-section-title">
+      <view class="home-section-title__bar"></view>
+      <view class="home-section-title__text font32">数据总览</view>
+    </view>
+
+    <view class="home-stats home-stats--{{moduleList.length}}">
+      <block wx:for="{{moduleList}}" wx:key="index">
+        <view class="home-stats__item home-stats__item--{{moduleList.length}} home-stats__item--status-{{item.status}}">
+          <view class="home-stats__number">{{item.number}}</view>
+          <image class="home-stats__icon" src="/assets/image/manager/4.png" mode="widthFix" />
+          <view class="home-stats__status">
+            <view class="home-stats__status-dot"></view>
+            <view class="home-stats__status-text font22">{{item.statusName}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view class="home-actions">
+      <view class="home-section-title">
+        <view class="home-section-title__bar"></view>
+        <view class="home-section-title__text font32">快捷操作</view>
+      </view>
+
+      <block wx:for="{{quickActionList}}" wx:key="index">
+        <view class="home-action-card home-action-card--{{item.theme}}">
+          <view class="home-action-card__icon-wrap">
+            <image class="home-action-card__icon" src="{{item.icon}}" mode="aspectFit" />
+          </view>
+          <view class="home-action-card__content">
+            <view class="home-action-card__title font32">{{item.title}}</view>
+            <view class="home-action-card__desc font24">{{item.desc}}</view>
+          </view>
+          <view class="home-action-card__arrow">></view>
+        </view>
+      </block>
+    </view>
+
+    <view class="home__divider"></view>
+
+    <!-- 提报指引 -->
+     <view class="home-guide">
+     <image class="home-guide__bg" src="/assets/image/manager/8.png" mode="widthFix"/>
+        <view class="home-guide__title font32 color333">提报指引</view>
+        <view class="home-guide__text font24">您拥有数据查看和监控权限，可查看本部门所有线索的详细信息、统计数据和处理进度。线索的具体处理由品保专员负责。</view>
+     </view>
   </view>
 </view>
