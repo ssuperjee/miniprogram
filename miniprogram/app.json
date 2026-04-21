@@ -3,7 +3,8 @@
     "pages/home/index",
     "pages/list/index",
     "pages/me/index",
-    "pages/login/index"
+    "pages/login/index",
+    "components/common/overlay/index"
   ],
   "subpackages": [
     {
@@ -48,7 +49,7 @@
       "sdkVersionEnd": "15.255.255"
     }
   },
-    "permission": {
+  "permission": {
     "scope.userLocation": {
       "desc": "用于行走测记录轨迹，以及水印相机写入拍摄位置"
     },

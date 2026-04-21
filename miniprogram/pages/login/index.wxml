@@ -41,3 +41,74 @@
   </view>
 
 </view>
+
+<!-- <overlay
+  show="{{overlayVisible}}"
+  serialNo="{{overlaySerialNo}}"
+  value="{{overlayOpinion}}"
+  closeOnClickOverlay="{{ false }}"
+  bind:input="onOverlayInput"
+  bind:close="onOverlayClose"
+  bind:cancel="onOverlayCancel"
+  bind:confirm="onOverlayConfirm"
+></overlay>
+overlayVisible: true,
+overlayOpinion: '',
+overlaySerialNo: 'XS20260326002',
+/**
+   * 同步弹窗输入内容。
+   */
+  onOverlayInput(event: WechatMiniprogram.CustomEvent<{ value: string }>) {
+    this.setData({
+      overlayOpinion: event.detail.value,
+    });
+  },
+
+  /**
+   * 统一关闭弹窗。
+   */
+  onOverlayClose() {
+    this.setData({
+      overlayVisible: false,
+    });
+  },
+
+  /**
+   * 取消时直接关闭弹窗，并清空当前填写内容。
+   */
+  onOverlayCancel() {
+    this.setData({
+      overlayVisible: false,
+      overlayOpinion: '',
+    });
+  },
+
+  /**
+   * 确认提交审批意见。
+   *
+   * 当前先做前端交互闭环：
+   * 1. 校验意见不能为空。
+   * 2. 提示提交成功。
+   * 3. 关闭弹窗并清空输入。
+   */
+  onOverlayConfirm(event: WechatMiniprogram.CustomEvent<{ value: string }>) {
+    const value = event.detail.value;
+
+    if (!value) {
+      wx.showToast({
+        title: '请输入审批意见',
+        icon: 'none',
+      });
+      return;
+    }
+
+    wx.showToast({
+      title: '提交成功',
+      icon: 'success',
+    });
+
+    this.setData({
+      overlayVisible: false,
+      overlayOpinion: '',
+    });
+  }, -->

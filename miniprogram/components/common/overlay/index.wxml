@@ -1,0 +1,33 @@
+<!-- components/common/overlay/index.wxml -->
+<van-overlay show="{{ show }}" bind:click="onOverlayClick" custom-style="background: rgba(15, 23, 42, 0.32); z-index: 999;">
+  <view class="overlay" catch:tap="noop">
+    <view class="overlay__header">
+      <view class="overlay__title-wrap">
+        <view class="overlay__icon">!</view>
+        <view class="overlay__title">{{title}}</view>
+      </view>
+      <view class="overlay__serial">
+        <text class="overlay__serial-label">{{serialLabel}}</text>
+        <text class="overlay__serial-value">{{serialNo}}</text>
+      </view>
+    </view>
+
+    <view class="overlay__body">
+      <textarea
+        class="overlay__textarea"
+        value="{{innerValue}}"
+        placeholder="{{placeholder}}"
+        maxlength="{{maxLength}}"
+        cursor-spacing="20"
+        placeholder-style="color: #98a2b3;"
+        bindinput="onInput"
+      />
+    </view>
+
+    <view class="overlay__footer">
+      <view class="overlay__action overlay__action--cancel" bindtap="onCancel">{{cancelText}}</view>
+      <view class="overlay__divider"></view>
+      <view class="overlay__action overlay__action--confirm" bindtap="onConfirm">{{confirmText}}</view>
+    </view>
+  </view>
+</van-overlay>
