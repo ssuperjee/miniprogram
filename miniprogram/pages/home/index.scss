@@ -11,8 +11,6 @@
   background: #f0f3fa;
   margin-top: -134rpx;
   border: 2rpx solid #fff;
-  box-shadow: inset 2rpx 2rpx 0 0 #fff;
-  // border-image: linear-gradient(360deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)) 2 2;
 }
 
 .home-section-title {
@@ -48,7 +46,6 @@
     width: 210rpx;
     height: 188rpx;
     background: linear-gradient(24deg, #e7ecf6 0%, #fbfcfe 100%);
-    box-shadow: inset 2rpx 2rpx 0rpx 0rpx #ffffff;
     border-radius: 24rpx;
     margin: 0 10rpx 20rpx;
     display: flex;
@@ -187,7 +184,6 @@
     height: 142rpx;
     margin-top: 20rpx;
     box-sizing: border-box;
-    box-shadow: inset 2rpx 2rpx 0rpx 0rpx #ffffff;
     background: linear-gradient(90deg,
         rgba(233, 237, 247, 0) 35.26%,
         #f54900 100%);
@@ -285,7 +281,6 @@
   width: 670rpx;
   height: 278rpx;
   background: linear-gradient(24deg, #e7ecf6 0%, #ffffff 100%);
-  box-shadow: inset 2rpx 2rpx 0rpx 0rpx #ffffff;
   border-radius: 24rpx 24rpx 24rpx 24rpx;
   border: 2rpx solid #fff;
   margin-top: 30rpx;

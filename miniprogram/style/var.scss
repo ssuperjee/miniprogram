@@ -7,6 +7,21 @@
   }
 }
 
+// ========== 颜色工具类 ==========
+$colors: (
+  000: #000,
+  333: #333,
+  666: #666,
+  999: #999,
+  fff: #fff
+);
+
+@each $name, $hex in $colors {
+  .color#{$name} {
+    color: $hex;
+  }
+}
+
 // margin 工具类
 @for $i from 2 through 64 {
   @if $i % 2 == 0 {

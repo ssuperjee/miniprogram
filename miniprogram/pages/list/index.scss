@@ -1,1 +1,225 @@
 /* pages/list/index.wxss */
+.list-page {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 34rpx 30rpx;
+  margin-bottom: 20rpx;
+
+  &__input,
+  &__button {
+    display: flex;
+    align-items: center;
+    height: 84rpx;
+    background: rgba(255, 255, 255, 0.21);
+    border-radius: 28rpx;
+  }
+
+  &__input {
+    width: 520rpx;
+    padding: 0 28rpx;
+    margin-right: 16rpx;
+  }
+
+  &__input-icon {
+    width: 22rpx;
+    height: 22rpx;
+    margin-right: 22rpx;
+  }
+
+  &__input-field {
+    width: 100%;
+    height: 84rpx;
+  }
+
+  &__button {
+    justify-content: center;
+    width: 152rpx;
+  }
+
+  &__button-icon {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 8rpx;
+  }
+
+  &__button-text {
+    padding: 0;
+    line-height: 1;
+    background: transparent;
+  }
+}
+
+.tabs-active {
+  font-weight: bold !important;
+  color: #000 !important;
+}
+
+// 修改 tabs 底部横线颜色
+.van-tabs__line {
+  background-color: #1f58e8 !important;
+}
+
+.panel {
+  margin: 38rpx auto 0;
+  padding: 32rpx 34rpx;
+}
+
+.panel-title {
+  margin-bottom: 18rpx;
+  color: #fff;
+}
+
+.panel-stats {
+  display: flex;
+  gap: 12rpx;
+
+  & + & {
+    margin-top: 12rpx;
+  }
+}
+
+.panel-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 116rpx;
+  padding: 6rpx;
+  text-align: center;
+  background: #eff5ff;
+  border-radius: 16rpx;
+
+  &--compact {
+    width: 147rpx;
+  }
+
+  &--wide {
+    width: 200rpx;
+  }
+
+  &__value {
+    font-weight: bold;
+  }
+}
+
+.lead-card {
+  width: 686rpx;
+  margin: 24rpx auto 0;
+  background: #ffffff;
+  border-radius: 24rpx;
+
+  &__meta {
+    height: 80rpx;
+    padding: 24rpx;
+    background: linear-gradient(24deg, #e7ecf6 0%, #fbfcfe 100%);
+    box-shadow: inset 2rpx 2rpx 0 0 #ffffff;
+    border-radius: 24rpx 24rpx 0 0;
+  }
+
+  &__body {
+    padding: 24rpx 32rpx;
+    background-color: #fff;
+    border-radius: 0 0 24rpx 24rpx;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64rpx;
+  }
+
+  &__code {
+    font-weight: bold;
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+  }
+
+  &__status-dot {
+    width: 12rpx;
+    height: 12rpx;
+    margin-right: 8rpx;
+    background-color: #1b8a69;
+    border-radius: 50%;
+  }
+
+  &__status-text {
+    color: #1b8a69;
+  }
+
+  &__details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 40rpx;
+    row-gap: 26rpx;
+    padding: 20rpx 0 24rpx;
+  }
+
+  &__detail-item {
+    min-width: 0;
+  }
+
+  &__detail-label {
+    margin-bottom: 8rpx;
+    line-height: 34rpx;
+  }
+
+  &__detail-value {
+    font-weight: bold;
+    line-height: 44rpx;
+    word-break: break-all;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 22rpx;
+    border-top: 1rpx solid #e8edf3;
+  }
+
+  &__footer-meta {
+    display: flex;
+    align-items: center;
+  }
+
+  &__footer-label {
+    margin-right: 8rpx;
+  }
+
+  &__duplicate-rate {
+    margin-right: 18rpx;
+    color: #1b8a69;
+    font-weight: bold;
+  }
+
+  &__date {
+    line-height: 34rpx;
+  }
+
+  &__link {
+    position: relative;
+    padding-right: 16rpx;
+    font-weight: bold;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 10rpx;
+      height: 10rpx;
+      border-top: 2rpx solid #333;
+      border-right: 2rpx solid #333;
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+}

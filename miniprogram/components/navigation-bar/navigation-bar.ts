@@ -23,6 +23,11 @@ Component({
       type: String,
       value: ''
     },
+    placeholder: {
+      type: Boolean,
+      value: false,
+      observer: '_placeholderChange'
+    },
     color: {
       type: String,
       value: ''
@@ -62,6 +67,7 @@ Component({
   data: {
     displayStyle: '',
     isOverlay: false,
+    showPlaceholder: true,
     navBarHeightStyle: ''
   },
   lifetimes: {
@@ -92,7 +98,13 @@ Component({
   methods: {
     _modeChange(mode: string) {
       this.setData({
-        isOverlay: mode === 'overlay'
+        isOverlay: mode === 'overlay',
+        showPlaceholder: mode !== 'overlay' || this.properties.placeholder
+      })
+    },
+    _placeholderChange(placeholder: boolean) {
+      this.setData({
+        showPlaceholder: this.properties.mode !== 'overlay' || placeholder
       })
     },
     _showChange(show: boolean) {

@@ -1,2 +1,72 @@
-<!--pages/list/index.wxml-->
-<text>pages/list/index.wxml</text>
+<!-- pages/list/index.wxml -->
+<view class="list-page">
+  <bg-box width="750" height="352" src="/assets/image/manager/3.png">
+    <navigation-bar title="全部线索" back="{{false}}" mode="overlay" placeholder="{{true}}" color="black" background="transparent"></navigation-bar>
+    <view class="search-bar">
+      <view class="search-bar__input bs-all">
+        <image class="search-bar__input-icon" src="/assets/image/manager/1.png" mode="widthFix" />
+        <input class="search-bar__input-field" type="text" placeholder="请输入编号" />
+      </view>
+      <view class="search-bar__button bs-all">
+        <image class="search-bar__button-icon" src="/assets/image/manager/1.png" mode="widthFix" />
+        <button class="search-bar__button-text font28 color333">筛选</button>
+      </view>
+    </view>
+  </bg-box>
+  <!-- tab标签页 -->
+  <van-tabs active="{{ currentTab }}" bind:change="onChange" title-inactive-color="#666" color="#1F58E8" line-width="40rpx" line-height="6rpx" tab-active-class="tabs-active">
+    <block wx:for="{{tabs}}" wx:key="title">
+      <van-tab title="{{item.title}}"></van-tab>
+    </block>
+  </van-tabs>
+  <bg-box width="686" height="368" extClass="panel" src="/assets/image/manager/3.png">
+    <view class="panel-title font28">子公司 · 线索统计</view>
+    <!-- 面板数据 -->
+    <view class="panel-stats panel-stats--compact">
+      <block wx:for="{{line1Items}}" wx:key="label">
+        <view class="panel-stat panel-stat--compact">
+          <view class="panel-stat__value font44 color333">{{item.number}}</view>
+          <view class="panel-stat__label font24 color666">{{item.label}}</view>
+        </view>
+      </block>
+    </view>
+    <view class="panel-stats panel-stats--wide">
+      <block wx:for="{{line2Items}}" wx:key="label">
+        <view class="panel-stat panel-stat--wide">
+          <view class="panel-stat__value font44 color333">{{item.number}}</view>
+          <view class="panel-stat__label font24 color666">{{item.label}}</view>
+        </view>
+      </block>
+    </view>
+  </bg-box>
+  <view class="lead-card">
+    <view class="lead-card__meta font24 color333">最后跟进：2026-04-11</view>
+    <view class="lead-card__body">
+      <view class="lead-card__header">
+        <view class="lead-card__code font32 color000">25JXC05001176</view>
+        <view class="lead-card__status font32 color000">
+          <view class="lead-card__status-dot"></view>
+          <view class="lead-card__status-text font22">
+            已完结
+          </view>
+        </view>
+      </view>
+      <view class="lead-card__details">
+        <block wx:for="{{leadFields}}" wx:key="label">
+          <view class="lead-card__detail-item">
+            <view class="lead-card__detail-label font24 color666">{{item.label}}</view>
+            <view class="lead-card__detail-value font28 color333">{{item.value}}</view>
+          </view>
+        </block>
+      </view>
+      <view class="lead-card__footer">
+        <view class="lead-card__footer-meta">
+          <text class="lead-card__footer-label font24 color666">重合度:</text>
+          <text class="lead-card__duplicate-rate font24">{{leadDuplicateRate}}</text>
+          <text class="lead-card__date font24 color999">{{leadDate}}</text>
+        </view>
+        <view class="lead-card__link font24 color333">查看详情</view>
+      </view>
+    </view>
+  </view>
+</view>

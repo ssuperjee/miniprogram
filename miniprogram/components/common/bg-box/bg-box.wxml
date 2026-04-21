@@ -4,7 +4,6 @@
     <slot></slot>
   </view>
 </view>
-
 <!-- 示例 -->
 <!-- <bg-box width="500" height="300" src="/assets/img/1.png">
   <view>

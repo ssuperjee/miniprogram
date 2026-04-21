@@ -1,5 +1,5 @@
 <view class="weui-navigation-bar weui-navigation-bar--{{isOverlay ? 'overlay' : 'stacked'}} {{extClass}}">
-  <view wx:if="{{!isOverlay}}" class="weui-navigation-bar__placeholder {{ios ? 'ios' : 'android'}}" style="{{navBarHeightStyle}}"></view>
+  <view wx:if="{{showPlaceholder}}" class="weui-navigation-bar__placeholder {{ios ? 'ios' : 'android'}}" style="{{navBarHeightStyle}}"></view>
   <view class="weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}" style="color: {{color}}; background: {{background}}; {{displayStyle}}; {{innerPaddingRight}}; {{navBarHeightStyle}}">
 
     <!-- 左侧按钮 -->
