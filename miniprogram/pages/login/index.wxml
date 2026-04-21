@@ -14,9 +14,9 @@
       <text class="login-form__required-label">手机号</text>
     </view>
 
-    <view class="login-form__input-group">
+    <view class="login-form__input-group {{phoneInvalid ? 'login-form__input-group--invalid' : ''}} {{phoneShake ? 'login-form__input-group--shake' : ''}}">
       <image class="login-form__input-icon" src="/assets/image/manager/2.png" mode="widthFix" />
-      <input class="login-form__input" type="number" maxlength="11" placeholder="请输入手机号" value="{{phone}}" bindinput="onPhoneInput" />
+      <input class="login-form__input" type="number" maxlength="11" placeholder="请输入手机号" value="{{phone}}" bindinput="onPhoneInput" bindblur="onPhoneBlur" />
     </view>
     <view class="login-form__tips">仅支持预注册手机号登录</view>
 

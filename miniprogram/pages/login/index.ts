@@ -13,6 +13,10 @@ const COUNTDOWN_SECONDS = 60;
 // 放在 Page 外层是为了便于在 onUnload 中统一清理，避免页面销毁后定时器继续运行。
 let countdownTimer: ReturnType<typeof setInterval> | null = null;
 
+// 手机号输入框抖动定时器。
+// 用于在触发错误反馈后恢复 shake 状态，避免类名一直保留导致下次无法重新播放动画。
+let phoneShakeTimer: ReturnType<typeof setTimeout> | null = null;
+
 Page({
 
   /**
@@ -34,6 +38,8 @@ Page({
   data: {
     phone: '',
     code: '',
+    phoneInvalid: false,
+    phoneShake: false,
     verifyCountdown: 0,
     verifyButtonState: 'disabled',
     verifyButtonText: '获取验证码',
@@ -50,10 +56,30 @@ Page({
    *    保证界面状态与当前表单内容保持同步。
    */
   onPhoneInput(event: WechatMiniprogram.Input) {
+    const phone = event.detail.value.trim();
+
     this.setData({
-      phone: event.detail.value.trim()
+      phone,
+      phoneInvalid: phone ? this.data.phoneInvalid && !PHONE_REGEXP.test(phone) : false,
     });
     this.updateButtonStates();
+  },
+
+  /**
+   * 手机号输入框失焦校验。
+   *
+   * 只有在用户已经输入内容但格式仍不合法时，才触发错误反馈：
+   * 1. 输入框边框变红。
+   * 2. 输入框左右抖动两次，强化错误提示。
+   */
+  onPhoneBlur() {
+    const { phone } = this.data;
+
+    if (!phone || PHONE_REGEXP.test(phone)) {
+      return;
+    }
+
+    this.triggerPhoneInvalidFeedback();
   },
 
   /**
@@ -102,6 +128,39 @@ Page({
       verifyButtonText: verifyCountdown > 0 ? `${verifyCountdown}s后重发` : '获取验证码',
       loginButtonState: phoneValid && codeValid ? 'active' : 'disabled'
     });
+  },
+
+  /**
+   * 触发手机号输入框错误反馈。
+   *
+   * 这里把“红边”和“抖动”拆开控制：
+   * - phoneInvalid: 负责保留错误边框，直到用户把号码修正为合法格式。
+   * - phoneShake: 负责播放一次性动画，播放结束后自动清除，便于下次再次触发。
+   */
+  triggerPhoneInvalidFeedback() {
+    if (phoneShakeTimer) {
+      clearTimeout(phoneShakeTimer);
+      phoneShakeTimer = null;
+    }
+
+    this.setData({
+      phoneInvalid: true,
+      phoneShake: false,
+    });
+
+    // 先重置一次 shake 状态，再在下一个事件循环设为 true，确保动画每次都能重新播放。
+    setTimeout(() => {
+      this.setData({
+        phoneShake: true,
+      });
+    }, 0);
+
+    phoneShakeTimer = setTimeout(() => {
+      this.setData({
+        phoneShake: false,
+      });
+      phoneShakeTimer = null;
+    }, 420);
   },
 
   /**
@@ -194,6 +253,11 @@ Page({
     if (countdownTimer) {
       clearInterval(countdownTimer);
       countdownTimer = null;
+    }
+
+    if (phoneShakeTimer) {
+      clearTimeout(phoneShakeTimer);
+      phoneShakeTimer = null;
     }
   },
 

@@ -92,6 +92,19 @@
 
   &__input-group {
     margin-bottom: 15rpx;
+
+    &--invalid .login-form__input {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 4rpx rgba(239, 68, 68, 0.08);
+    }
+
+    &--invalid .login-form__input-icon {
+      opacity: 0.9;
+    }
+
+    &--shake {
+      animation: login-form-shake 0.18s linear 2;
+    }
   }
 
   &__verify-row {
@@ -165,5 +178,27 @@
       background: linear-gradient(90deg, #e5e7eb 0%, #e5e7eb 100%);
       box-shadow: none;
     }
+  }
+}
+
+@keyframes login-form-shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-8rpx);
+  }
+
+  50% {
+    transform: translateX(8rpx);
+  }
+
+  75% {
+    transform: translateX(-6rpx);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
