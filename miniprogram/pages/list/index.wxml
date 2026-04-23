@@ -19,9 +19,9 @@
       <van-tab title="{{item.title}}"></van-tab>
     </block>
   </van-tabs>
-  <bg-box width="686" height="368" extClass="panel" src="/assets/image/manager/3.png">
+  <!-- 面板数据 -->
+  <!-- <bg-box width="686" height="368" extClass="panel" src="/assets/image/manager/3.png">
     <view class="panel-title font28">子公司 · 线索统计</view>
-    <!-- 面板数据 -->
     <view class="panel-stats panel-stats--compact">
       <block wx:for="{{line1Items}}" wx:key="label">
         <view class="panel-stat panel-stat--compact">
@@ -38,18 +38,41 @@
         </view>
       </block>
     </view>
-  </bg-box>
+  </bg-box> -->
   <view class="lead-card">
-    <view class="lead-card__meta font24 color333">最后跟进：2026-04-11</view>
+    <!-- <view class="lead-card__meta font24 color333">最后跟进：2026-04-11</view> -->
     <view class="lead-card__body">
       <view class="lead-card__header">
         <view class="lead-card__code font32 color000">25JXC05001176</view>
         <view class="lead-card__status font32 color000">
-          <view class="lead-card__status-dot"></view>
-          <view class="lead-card__status-text font22">
-            已完结
+          <view class="lead-card__tag lead_status-bg_overdue">
+            <view class="lead-card__status-dot lead_status-dot_overdue"></view>
+            <view class="font22 lead_status-color_overdue">进行中</view>
+          </view>
+          <view class="lead-card__tag lead_status-bg_finished">
+            <view class="lead-card__status-dot lead_status-dot_finished"></view>
+            <view class="font22 lead_status-color_finished">已完结</view>
           </view>
         </view>
+      </view>
+
+      <view class="lead-card__source">
+        <view class="lead-card__source__title font24">源线索</view>
+        <view class="lead-card__source__clue font24 color333">XS20260320007</view>
+        <view class="lead-card__source__clue font24 color333">XS20260320007</view>
+      </view>
+
+      <view class="lead-card__meta">
+        <view class="lead-card__meta_label font24 color333">申请日期：</view>
+        <view class="lead-card__meta_date font28 color333">2026-04-11</view>
+      </view>
+      <view class="lead-card__meta">
+        <view class="lead-card__meta_label font24 color333">最后跟进：</view>
+        <view class="lead-card__meta_date font28 color333">2026-04-11</view>
+      </view>
+      <view class="lead-card__meta">
+        <view class="lead-card__meta_label font24 color333">分配日期：</view>
+        <view class="lead-card__meta_date font28 color333">2026-04-11</view>
       </view>
       <view class="lead-card__details">
         <block wx:for="{{leadFields}}" wx:key="label">

@@ -78,7 +78,7 @@
   display: flex;
   gap: 12rpx;
 
-  & + & {
+  &+& {
     margin-top: 12rpx;
   }
 }
@@ -113,12 +113,39 @@
   background: #ffffff;
   border-radius: 24rpx;
 
-  &__meta {
-    height: 80rpx;
+  &__source {
+    width: 638rpx;
+    min-height: 116rpx;
+    background: #FAF5FF;
+    border-radius: 16rpx;
     padding: 24rpx;
-    background: linear-gradient(24deg, #e7ecf6 0%, #fbfcfe 100%);
-    box-shadow: inset 2rpx 2rpx 0 0 #ffffff;
-    border-radius: 24rpx 24rpx 0 0;
+
+    &__title {
+      color: #980FFA;
+      margin-bottom: 18rpx;
+    }
+
+    &__clue {
+      width: 574rpx;
+      height: 64rpx;
+      line-height: 64rpx;
+      background: #EFE8F6;
+      border-radius: 16rpx;
+      padding: 0 20rpx;
+      margin-bottom: 12rpx;
+    }
+  }
+
+  &__meta {
+    width: 638rpx;
+    height: 64rpx;
+    background: #f7f9ff;
+    border-radius: 16rpx 16rpx 16rpx 16rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20rpx;
+    margin-top: 12rpx;
   }
 
   &__body {
@@ -141,18 +168,17 @@
   &__status {
     display: flex;
     align-items: center;
+    background: #f1fdf4;
+    // width: 118rpx;
+    height: 40rpx;
+    justify-content: center;
   }
 
   &__status-dot {
     width: 12rpx;
     height: 12rpx;
     margin-right: 8rpx;
-    background-color: #1b8a69;
     border-radius: 50%;
-  }
-
-  &__status-text {
-    color: #1b8a69;
   }
 
   &__details {
@@ -161,6 +187,7 @@
     column-gap: 40rpx;
     row-gap: 26rpx;
     padding: 20rpx 0 24rpx;
+    margin-top: 32rpx;
   }
 
   &__detail-item {
@@ -211,7 +238,7 @@
     font-weight: bold;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       right: 0;
@@ -222,4 +249,80 @@
       transform: translateY(-50%) rotate(45deg);
     }
   }
+}
+
+.lead_status-color {
+  &_audit {
+    color: #ff7a45;
+  }
+
+  &_finished {
+    color: #1b8a69;
+  }
+
+  &_ing {
+    color: #48c074;
+  }
+
+  &_overdue {
+    color: #d40004;
+  }
+
+  &_invalid {
+    color: #f3f4f6;
+  }
+}
+
+.lead_status-dot {
+  &_audit {
+    background-color: #ff7a45;
+  }
+
+  &_finished {
+    background-color: #1b8a69;
+  }
+
+  &_ing {
+    background-color: #48c074;
+  }
+
+  &_overdue {
+    background-color: #d40004;
+  }
+
+  &_invalid {
+    background-color: #f3f4f6;
+  }
+}
+
+.lead_status-bg {
+  &_audit {
+    background-color: #fffbec;
+  }
+
+  &_finished {
+    background-color: #f1fdf4;
+  }
+
+  &_ing {
+    background-color: #f1fdf4;
+  }
+
+  &_overdue {
+    background-color: #ffecec;
+  }
+
+  &_invalid {
+    background-color: #f3f4f6;
+  }
+}
+
+.lead-card__tag {
+  width: 118rpx;
+  height: 40rpx;
+  border-radius: 200rpx 200rpx 200rpx 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10rpx;
 }
